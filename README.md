@@ -1,27 +1,15 @@
-# Template monorepo
+# waku-conflicting-hmr-port-reproduction
 
-This is a template repo in GitHub for creating a fresh monorepo for managing code and documentation.
 
-For more details on this setup, refer to my blog post here: https://matthamlin.me/2024/february/library-docs-monorepo-template
-
-## Getting Started:
-
-You can get started using this template in 2 ways:
-
-1. via `degit`:
+Bug:
 
 ```sh
-bunx --bun degit hamlim/template-monorepo <name-of-your-repo>
+demo-app-2:dev: warn: Port 3000 is in use, trying 3001 instead.
+demo-app-1:dev: ready: Listening on http://localhost:3000/
+demo-app-2:dev: ready: Listening on http://localhost:3001/
+demo-app-1:dev: WebSocket server error: Port 24678 is already in use
 ```
 
-2. via GitHub:
+Repliace via `bun run dev`
 
-- Use this template (see `Use this Template` button near the top right corner of the page)
-- Clone the newly created repo
-
-Once you have a repo setup - you can then install dependencies via `bun install` (if you don't have bun installed locally, refer to their [docs](https://bun.sh)).
-
-
----
-
-Check out the [Guidebook](./GUIDEBOOK.md) for more details on how to use this repo setup!
+Issue: https://github.com/wakujs/waku/issues/1464#issuecomment-2958946653
